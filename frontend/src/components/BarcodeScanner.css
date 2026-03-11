@@ -1,0 +1,72 @@
+.scanner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.scanner-container {
+  background-color: var(--color-white);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 700px;
+  width: 90%;
+}
+
+.scanner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.scanner-header h3 {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--color-dark-grey);
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-close:hover {
+  color: var(--color-danger);
+}
+
+.scanner-video {
+  width: 100%;
+  height: 400px;
+  background-color: var(--color-light-grey);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.scanner-video video,
+.scanner-video canvas {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+.scanner-instruction {
+  text-align: center;
+  margin-top: 15px;
+  color: var(--color-dark-grey);
+  font-size: 0.95rem;
+}

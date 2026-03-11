@@ -1,0 +1,232 @@
+/* Receipt Overlay - Screen only */
+.receipt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 20px;
+}
+
+.receipt-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Receipt Paper */
+.receipt-paper {
+  background: white;
+  width: 100%;
+  font-family: 'Courier New', monospace;
+  color: #000;
+  padding: 15px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Header */
+.receipt-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.receipt-logo {
+  max-width: 100px;
+  height: auto;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+.business-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 8px 0;
+  color: #000;
+}
+
+.business-info {
+  font-size: 12px;
+  margin: 3px 0;
+  color: #000;
+}
+
+/* Divider */
+.receipt-divider {
+  border-top: 1px dashed #000;
+  margin: 12px 0;
+}
+
+/* Info Section */
+.receipt-info {
+  margin: 12px 0;
+}
+
+.receipt-info p {
+  margin: 5px 0;
+  font-size: 12px;
+}
+
+/* Table */
+.receipt-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 11px;
+}
+
+.receipt-table th {
+  text-align: left;
+  padding: 6px 4px;
+  border-bottom: 1px solid #000;
+  font-weight: bold;
+}
+
+.receipt-table td {
+  padding: 6px 4px;
+  vertical-align: top;
+}
+
+.receipt-table th:nth-child(2),
+.receipt-table td:nth-child(2),
+.receipt-table th:nth-child(3),
+.receipt-table td:nth-child(3),
+.receipt-table th:nth-child(4),
+.receipt-table td:nth-child(4) {
+  text-align: right;
+}
+
+/* Total */
+.receipt-total {
+  margin: 12px 0;
+  text-align: right;
+}
+
+.receipt-total p {
+  margin: 5px 0;
+  font-size: 12px;
+}
+
+.total-line {
+  font-size: 16px !important;
+  margin: 10px 0 !important;
+}
+
+/* Footer */
+.receipt-footer {
+  text-align: center;
+  margin: 15px 0 0 0;
+}
+
+.thank-you {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.receipt-footer p {
+  margin: 5px 0;
+  font-size: 11px;
+}
+
+/* Notes */
+.receipt-notes {
+  margin: 10px 0;
+  font-size: 11px;
+}
+
+.receipt-notes p {
+  margin: 5px 0;
+}
+
+/* Hide on screen, show on print */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  .receipt-paper,
+  .receipt-paper * {
+    visibility: visible;
+  }
+  
+  .no-print,
+  .receipt-overlay,
+  .receipt-container {
+    display: none !important;
+  }
+  
+  .receipt-paper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm !important;
+    max-width: 80mm !important;
+    margin: 0 !important;
+    padding: 5mm !important;
+    background: white !important;
+  }
+  
+  @page {
+    size: 80mm auto;
+    margin: 0;
+  }
+  
+  .receipt-logo {
+    max-width: 80px !important;
+    margin: 0 auto 8px !important;
+  }
+  
+  .business-name {
+    font-size: 18px !important;
+  }
+  
+  .business-info {
+    font-size: 10px !important;
+  }
+  
+  .receipt-divider {
+    margin: 8px 0 !important;
+  }
+  
+  .receipt-table {
+    font-size: 10px !important;
+  }
+  
+  .receipt-table th,
+  .receipt-table td {
+    padding: 4px 2px !important;
+  }
+  
+  .total-line {
+    font-size: 14px !important;
+  }
+  
+  .thank-you {
+    font-size: 14px !important;
+  }
+  
+  * {
+    color: #000 !important;
+    background: white !important;
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .receipt-container {
+    max-width: 100%;
+    margin: 10px;
+    padding: 15px;
+  }
+}
